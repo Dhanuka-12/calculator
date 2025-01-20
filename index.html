@@ -7,7 +7,20 @@
     <body>
 
         <script>
-                alert("Hello! Welcome to my Calculator");
+            alert("Hello! Welcome to my Calculator");
+
+            function appendValue(value) {
+                let inputField = document.getElementById("inputtxt");
+                if (value === 'C') {
+                    inputField.value = "";
+                } else if (value === '⌫') {
+                    inputField.value = inputField.value.slice(0, -1);
+                } else if (value === '=') {
+                    inputField.value = eval(inputField.value.replace(/X/g, '*')) || "";
+                } else {
+                    inputField.value += value;
+                }
+            }
         </script>
 
         <div>
